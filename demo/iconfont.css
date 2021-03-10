@@ -1,0 +1,25 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1614762527211'); /* IE9 */
+  src: url('iconfont.eot?t=1614762527211#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPoAAsAAAAACBQAAAObAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqDbIM7ATYCJAMMCwgABCAFhG0HRhsRBxEVnOnIfiRUt1Mxa9J5pKkpnuS22im+yX/Sqe9LZ0c5BwiwgEqReCxPgDyRGyBg4O7StsgvGsrSNzRS37L3kw3xMex/Lset5wfW+pblctcYm/bGhQHGAQW4xvKACiQgbxle6yDDxelAADhseKGklKwiSGBw6xEA6mpvrYdUUYMNJBMkEJQdXRloERSQhNnCdQALk+/TRwQkAQIUItymeS3JTYh7U/lhmSirZVWRFiPTGQHIvQARgBeAAVTTaS6DmPm8iOCmmA1HK8FAEKZyqtWQsC2pcqN/PAEgJVyxFpDcRMJFcQIGEPBhGQskuP5egBIAB7AawAMgGb2dBEHFtc0MuIq0PAfnLJOXG6/cObKDl8xdObJizjZ5u6ry1qui26+L774tvfOmpGrOCZei0jN36O7d0tu3i1fwW7eKZPNlvN4/J2gbv3OnpMu67lZYC6VoLh9J/YTYVEZO40mxIYzgDHfuVK+4YCIfclt+2mjZHZdtt0xWnDXdc4SWnTOas8FxrWXgnUmOU+S/2nzzOp44WfOx4UP5kspQWzurT0dt+d8yxzJXW5p/j9nZsRC5b2fHKlAQ3AMUnlArm7YkF7qbpt70y/Gjkuk9TVSKqeV66Yd5CfW2U45F6SJeka96GWpoUIzeOkrz0KhVMeXTYJ2QpuGdFL5rkg7/pSx1LXW0h/bwG4bXFl36c/6nDdgt7jz7+5edxyjGQn7xeqOazTqC2Yzlt/wzdw3Rix/Srkz/V9tnmAk6ixU6L0fPahPKs8cVUxFljxEq21a1/rRRoA4AoJ7MSJQTxSXRk8b91t/g2wO5XKsb9VtSMQDAo+ZBW8wj10K6aQsBPzGNAVCrWQrP1YjMYAdsJyiiAdIrUoFbEvy6VAAw8IRdakyMACQ1LkCABqxBhAQnHCN5gQIqBIESEmKBw1NqbxUMDUAEMU0AHqYjIOg5CAJ0cBFE6LmBY6THoICJz6CEXiJwOP6dh1y7lK2ujErQgl4gM01Nvk5WafIbk6FUXOYl5D9ynzkh9IJ68Ik18hQt+jGJRAiImwoeaDYsywZabnI04qUibez71HUhzzSVs3LFkCKQBbQFyBiNGkWFxarx+TeUGJQUHshpMv8h1stKByFPQIB7imuinFvZpTdKRIQggLBGBTyQEZWerwHa7ko5ZAhPyuBpxXycj0jF3vLS6v0WAXDusGICicSwPmZzVrumaZfd65WUzdiU6FJWlo4DAA==') format('woff2'),
+  url('iconfont.woff?t=1614762527211') format('woff'),
+  url('iconfont.ttf?t=1614762527211') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1614762527211#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-weixin-copy:before {
+  content: "\e65b";
+}
+
+.icon-QQ-circle-fill:before {
+  content: "\ea94";
+}
+
