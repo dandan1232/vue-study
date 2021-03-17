@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全局环境的this</title>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <script>
+        //函数中的this指针
+        // 谁调用了这个函数，this就指向谁
+        let btn = document.getElementById('btn')
+        btn.onclick = function () {
+            console.log(this)
+        }
+
+        //全局函数中的this指针
+        console.log(this === window)
+        console.log(this.document === document)
+
+        //非严格模式下相等
+        function test1() {
+            return this
+        }
+
+        console.log(test1() === window) //true
+        // 等同于下面代码
+        // 一切window都可以用
+        console.log(window.test1() === window) //true
+
+        //严格模式
+        function test2() {
+            'use strict' //使用严格模式
+            return this
+        }
+        console.log(test2() == undefined)
+        console.log(window.test2() == window)
+
+        
+        console.log(test2() === undefined)
+        console.log(window.test2() === window)
+
+
+    </script>
+</body>
+
+</html>

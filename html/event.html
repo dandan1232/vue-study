@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件练习</title>
+    <style>
+        /* *清空内外边距，顶到最上面 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #app {
+            margin: 50px;
+        }
+
+        .btn {
+            width: 100px;
+            height: 35px;
+            font-size: 1.5em;
+            margin: 10px;
+        }
+
+        .img:hover {
+            cursor: pointer;
+        }
+
+        .parent {
+            width: 300px;
+            height: 300px;
+            padding: 50px;
+            background: rgb(224, 70, 70);
+        }
+
+        .item {
+            /* 横着排用letf */
+            float: left;
+            margin-right: 10px;
+            margin-top: 20px;
+            list-style-type: none;
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            /* vertical-align: middle; */
+            background: rgb(43, 233, 217);
+            text-align: center;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            font-size: 18px;
+            color: blanchedalmond;
+            font-weight: 600;
+        }
+
+        .nav-item:hover {
+            color: rgb(7, 16, 99);
+        }
+
+
+        .input-form {
+            margin-top: 10;
+            width: 200px;
+            height: 100px;
+        }
+
+        .title {
+            font-size: 16px;
+
+        }
+        .class1{
+            font-size: 20px;
+        }
+        .class2{
+            color: rgb(172, 18, 151);
+        }
+        .class3{
+            font-size: 40px;
+        }
+        .class4{
+            color: rgb(28, 28, 184);
+        }
+
+
+        /* p{
+            box-sizing: content-box;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            background: rgb(48, 155, 197);
+            font-size: 1.5em;
+            text-align: center;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="app" class="box">
+        <h2>点击了:{{count}}</h2>
+        <button class="btn" v-on:click="count++">+</button>
+        <button class="btn" v-on:click="count--">-</button>
+        <hr>
+        <button class="btn" v-on:click="incr(step,$event)">+</button>
+        <button class="btn" v-on:click="decr(step,$event)">-</button>
+        <!-- <p>hello</p> -->
+        <hr>
+
+        <div @click.self="respParent" class="parent">
+            <img src="/images/1.jpg" :width="width" :height="height" class="img" :data-xyz="msg" @click="respChild" />
+            <h2>{{msg}}</h2>
+        </div>
+
+        <ul class="nav">
+            <li class="item">
+                <h2><a href="https://www.baidu.com/" @click.prevent="incr(step,$event)" class="nav-item">百度</a></h2>
+            </li>
+
+            <li class="item">
+                <h2><a href="https://www.baidu.com/" @click.prevent="incr(step,$event)" class="nav-item">百度</a></h2>
+            </li>
+
+            <li class="item">
+                <h2><a href="https://www.baidu.com/" @click.prevent="incr(step,$event)" class="nav-item">百度</a></h2>
+            </li>
+        </ul>
+
+
+        <!-- <input type="text" placeholder="请输入内容...." @keyup.f4="info($event)" class="input-form" /> -->
+        <input type="text" placeholder="请输入内容...." @keyup.enter="info($event)" class="input-form" />
+
+        <p :style="{color: color, 'font-size':size + 'px'}">msg</p>
+        <button class="btn" @click="zoom">放大</button>
+
+        <p class="class1 class2" :class="cssArr">ggg</p>
+        <button class="btn" @click="change">改变</button>
+
+
+    </div>
+    <!-- <script src="../js/vue.js"> -->
+    <!-- 开发环境版本，包含了有帮助的命令行警告,从CDN引入 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                count: 0,
+                step: 2,
+                width: 200,
+                height: 200,
+                msg: 'hello world',
+                size: 20,
+                color:'#333',
+                cssArr:['class3','class4'],
+            },
+            methods: {
+                incr(n, ev) {
+                    this.count = this.count + n
+                    console.log(ev)
+                },
+                decr(n, ev) {
+                    this.count = this.count - n
+                    // console.log(ev)
+                    // console.log(ev.target.width);
+                    let el = ev.target
+                    el.style.borderRadius = '50%'
+                },
+                respChild(ev) {
+                    alert('child')
+                    // console.log(ev)
+                    // console.log(ev.target.dataset.xyz)
+                    // let el = ev.target
+                    // el.style.width = '400px'
+                    // el.style.height = '400px'
+                    // this.width = this.width * 2
+                    // this.height = this.height * 2
+                    // this.msg='Vue.js'
+                },
+                respParent() {
+                    alert('parent')
+                },
+                info(ev) {
+                    console.log('press')
+                    console.log(ev)
+                },
+                zoom() {
+                    this.size = this.size + 2
+                    this.color='#f00'
+                },
+                change(){
+                    // this.cssArr.push('class3')
+                    // this.cssArr.push('class4')
+                    // this.cssArr.pop()
+                    // this.cssArr.pop()
+                    this.cssArr=['class1','class2']
+                    console.log(this.cssArr)
+                }
+            },
+        }) 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var的局限性</title>
+</head>
+<body>
+    <button>测试1</button>
+    <button>测试2</button>
+    <button>测试3</button>
+    <script>
+        var btns = document.getElementsByTagName('button')
+        // btns[0].onclick = function(){
+        //     console.log('点击了')
+        // {
+
+        // 都是点击点三个按钮
+        // for(var index=0;index<btns.length;index++){
+        //     btns[index].onclick=function(){
+        //         console.log('点击了第'+index+'个按钮')
+        //     }
+        // }
+
+        // 1.闭包解决
+        // for(var index = 0;index<btns.length;index++){
+        //     ;(function(index){
+        //         btns[index].onclick=function(){
+        //             console.log('点击了第'+index+'个按钮')
+        //         }
+        //     })(index)
+        // }
+
+        //2.es6的let
+          for(let index=0;index<btns.length;index++){
+            btns[index].onclick=function(){
+                console.log('点击了第'+index+'个按钮')
+            }
+        }
+
+    </script>
+</body>
+</html>
