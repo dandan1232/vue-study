@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>切换黑夜模式</title>
+    <style>
+
+        #app {
+            margin: 50px;
+            width: 2000px;
+            height: 2000px;
+        }
+
+        .btn {
+            width: 200px;
+            height: 35px;
+            font-size: 1.5em;
+            margin: 10px;
+        }
+
+        .class1 {
+            background-color: #fff;
+        }
+
+        .class2 {
+            background-color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" class="class1" :class="cssArr">
+        <button class="btn" @click="change">白天模式</button>
+        <button class="btn" @click="change1">黑夜模式</button>
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告,从CDN引入 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                count: 0,
+                color: '#333',
+                cssArr: ['class2'],
+            },
+            methods: {
+                change() {
+                    this.cssArr = ['class1']
+                    console.log(this.cssArr)
+                },
+                change1() {
+                    this.cssArr = ['class2']
+                    console.log(this.cssArr)
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
